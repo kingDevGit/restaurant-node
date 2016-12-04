@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+	<h1>Restaurant: <%= restaurant.name %></h1>
+	<% if (restaurant.photo) { %>
+		<img src="data: <%= restaurant.mimetype %>;base64, <%= restaurant.photo %>" border="1">
+	<% } %>
+	<ul>
+		<li>Borough: <%= restaurant.borough %></li>
+		<li>Cuisine: <%= restaurant.cuisine %></li>
+		<li>Address
+			<ul>
+				<li>Street: <%= restaurant.address.street %></li>
+				<li>Building: <%= restaurant.address.building %></li>
+				<li>Zipcode: <%= restaurant.address.zipcode %></li>
+			</ul>
+		</li>
+		<li>GPS: [<%= restaurant.address.coord.latitude %>, <%= restaurant.address.coord.longtitude %>]</li>
+		<li>Rating
+			<ol>
+				<% restaurant.grades.forEach(function(grade) { %>
+					<li><%= grade.score %> (<%= grade.user %>)</li>
+				<% }); %>
+			</ol>
+		</li>
+		<li>Created by: <%= restaurant.userid %></li>
+	</ul>
+	<% if (restaurant.address.coord.latitude && restaurant.address.coord.longtitude) { %>
+		<a href="/gmap?lat=<%= restaurant.address.coord.latitude %>&lon=<%= restaurant.address.coord.longtitude %>&title=<%= restaurant.name %>">Google Map</a><br>
+	<% } %>
+	<a href="/change?_id=<%= restaurant._id %>">Edit</a><br>
+	<a href="/remove?_id=<%= restaurant._id %>">Delete</a><br>
+	<a href="/rate?_id=<%= restaurant._id %>">Rate</a><br>
+	<a href="/read<%= search %>">Go Back</a><br>
+	<a href="/logout">Logout</a><br>
+</body>
+
+</html>

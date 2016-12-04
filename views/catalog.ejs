@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+	<h1>Restaurants</h1>
+
+	<form action="" method="get">
+		<label>Name</label>
+		<input name="name" type="text">
+		<br>
+		<label>Borough</label>
+		<input name="borough" type="text">
+		<br>
+		<label>Cuisine</label>
+		<input name="cuisine" type="text">
+		<br>
+		<input type="submit" value="search">
+		<br>
+	</form>
+
+	<h3>Showing <%= restaurants.length %> restaurants (criteria: <%= criteria %>)</h3>
+	<ul>
+		<% restaurants.forEach(function(restaurant) { %>
+			<li>
+				<a href="/display?_id=<%= restaurant._id %>">
+					<%= restaurant.name %>
+				</a>
+			</li>
+		<% }); %>
+	</ul>
+
+	<a href="/new">New</a>
+	<br>
+	<a href="/logout">Logout</a>
+	<br>
+</body>
+
+</html>

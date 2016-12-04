@@ -1,0 +1,29 @@
+{
+  "name": "restaurant-node",
+  "version": "1.0.0",
+  "description": "COMP S381F Project Assignment",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-session": "^2.0.0-alpha.2",
+    "ejs": "^2.5.3",
+    "express": "^4.14.0",
+    "express-fileupload": "0.0.5",
+    "mongodb": "^2.2.12",
+    "mongoose": "^4.7.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KennyTangHK/restaurant-node.git"
+  },
+  "author": "Kenny Tang & King Chan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KennyTangHK/restaurant-node/issues"
+  },
+  "homepage": "https://github.com/KennyTangHK/restaurant-node#readme"
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+	<h1>Edit Restaurant</h1>
+
+	<form action="?_id=<%= restaurant._id %>" method="post" encType="multipart/form-data">
+		<label>Name</label>
+		<input name="name" type="text" value="<%= restaurant.name%>" require><br>
+		<label>Borough</label>
+		<input name="borough" type="text" value="<%= restaurant.borough%>"><br>
+		<label>Cuisine</label>
+		<input name="cuisine" type="text" value="<%= restaurant.cuisine%>"><br><br>
+		<strong>Address</strong><br>
+		<label>Street</label>
+		<input name="street" type="text" value="<%= restaurant.address.street%>"><br>
+		<label>Building</label>
+		<input name="building" type="text" value="<%= restaurant.address.building%>"><br>
+		<label>Zipcode</label>
+		<input name="zipcode" type="text" value="<%= restaurant.address.zipcode%>"><br><br>
+		<strong>GPS</strong><br>
+		<label>Latitude</label>
+		<input name="latitude" type="text" value="<%= restaurant.address.coord.latitude%>"><br>
+		<label>Longtitude</label>
+		<input name="longtitude" type="text" value="<%= restaurant.address.coord.longtitude%>"><br><br>
+		<label>Photo</label>
+		<input name="photo" type="file"><br><br>
+		<input type="submit" value="Edit">
+	</form>
+
+	<a href="/display?_id=<%= restaurant._id %>">Go Back</a><br>
+	<a href="/logout">Logout</a><br>
+</body>
+
+</html>
